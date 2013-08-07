@@ -1,0 +1,16 @@
+// Place third party dependencies in the lib folder
+//
+// Configure loading modules from the lib directory,
+// except 'app' ones,
+requirejs.config({
+    "baseUrl": "js/lib",
+    "paths": {
+      "app": "../app",
+      "jquery" : "//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min",
+      "ga" : "//www.google-analytics.com/analytics"
+    },
+    urlArgs: "decache=" + (new Date()).getTime()
+});
+
+// Load the main app module to start the app
+requirejs(["app/main"]);
